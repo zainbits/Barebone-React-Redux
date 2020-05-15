@@ -19,12 +19,29 @@
                 name: 'Zin',
                 age: 21
             }
+            handleCopy = (e) => {
+                console.log("Do not copy this sentence");
+            }
+            buttonClick = (e) => {
+                console.log(e.target)
+                this.setState({
+                    name: 'Yosh',
+                    age: 24
+                })
+
+            }
+            handleMouseOver = (e) => {
+                console.log(e.target, e.pageX)
+            }
             render() {
                 return (
                     // cannot use class use className Instead For CSS
                     <div className="app-content">
                         <h1>Hey, there</h1>
                         <p>My name is : {this.state.name} and I am {this.state.age} years old</p>
+                        <button onClick={this.buttonClick}>ClickButton</button>
+                        <button onMouseOver={this.handleMouseOver}>HoverOnMe</button>
+                        <p onCopy={this.handleCopy}>Try Copy this sentence</p>
                     </div>
                 )
             }
